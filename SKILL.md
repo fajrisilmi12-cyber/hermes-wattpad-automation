@@ -63,6 +63,12 @@ Use when automating Wattpad actions including cookie-based session authenticatio
    - Confirm publication in the "Publikasikan bab" modal (`role="dialog"` -> `button:has-text("Publikasikan")`).
    - Verify on the public story page: both chapters appear under the `Bab` tab with public timestamps (e.g., *"1 menit yang lalu"*).
 
+6. **Updating / Uploading Story Cover**:
+   - Navigate to the story overview: `https://www.wattpad.com/myworks/<story_id>`.
+   - Set the image file directly on the file input: `page.locator('input[type="file"]').first.set_input_files('/path/to/cover.jpg')`.
+   - Wattpad triggers an automatic POST to `/apiv2/updatestorycover`.
+   - Verify on the public story page that the new cover is displayed.
+
 ## References
 
 - `references/story-creation-and-publishing.md` — Playwright boilerplate, selector specifications, and verification snippets.
